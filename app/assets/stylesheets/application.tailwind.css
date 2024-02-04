@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes beat {
+  to {
+    transform: scale(1.3);
+  }
+}
+
 @layer components {
   main {
     @apply w-full max-w-2xl mx-auto mt-12 md:w-2/3;
@@ -105,7 +111,6 @@
   @apply font-medium text-gray-900;
 }
 
-/* Modifiers */
 .invoices__table--shadow {
   @apply overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg;
 }
