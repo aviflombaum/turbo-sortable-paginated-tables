@@ -1,0 +1,61 @@
+<div class="px-4 sm:px-6 lg:px-8">
+  <div class="sm:flex sm:items-center">
+    <div class="sm:flex-auto">
+      <h1 class="text-base font-semibold leading-6 text-gray-900">Invoices</h1>
+    </div>
+  </div>
+  <%= turbo_frame_tag "invoices" do %>
+    <div class="flow-root mt-8">
+      <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+          <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
+            <table class="min-w-full divide-y divide-gray-300">
+              <thead class="bg-gray-50">
+                <tr>
+                  <%= sortable_table_header 'ID', :id, :invoices_path %>
+                  <%= sortable_table_header 'Amount', :amount, :invoices_path %>
+                  <%= sortable_table_header 'Status', :status, :invoices_path %>
+                  <%= sortable_table_header 'Created At', :created_at, :invoices_path %>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <% @invoices.each do |invoice| %>
+                  <tr>
+                    <td class="py-4 pl-4 pr-3 text-sm font-medium text-gray-900 whitespace-nowrap sm:pl-6">
+                      <%= invoice.id %>
+                    </td>
+                    <td class="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">
+                      <%= number_to_currency(invoice.amount) %>
+                    </td>
+                    <td class="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">
+                      <% case invoice.status %>
+                      <% when "Cancelled" %>
+                      <span
+                        class="inline-flex px-2 text-xs font-semibold leading-5 text-red-800 bg-red-100 rounded-full">
+                        Cancelled
+                      </span>
+                      <% when "Refunded" %>
+                      <span
+                        class="inline-flex px-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
+                        Refunded
+                      </span>
+                      <% when "Completed" %>
+                      <span
+                        class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
+                        Completed
+                      </span>
+                    <% end %>
+                  </td>
+                  <td class="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    <%= invoice.created_at.strftime('%m/%d/%Y') %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <%= paginate @invoices %>
+  <% end %>
+</div>

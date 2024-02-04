@@ -1,0 +1,33 @@
+<%= paginator.render do -%>
+  <nav class="items-center w-full py-4 bg-white pagination sm:flex sm:justify-between dark:bg-gray-800 dark:border-gray-700" role="navigation" aria-label="pager">
+    <div>
+      <p class="text-xs text-gray-700">
+        Showing
+        <span class="font-medium">
+          <%= current_page.first? ? "1" : ((current_page.to_i - 1) * per_page) + 1 %>
+        </span>
+        to
+        <span class="font-medium">
+          <%= current_page.to_i * per_page %>
+        </span>
+        of
+        <span class="font-medium">
+          <%= total_pages * per_page %>
+        </span>
+      </p>
+    </div>
+    <ul class="flex items-center sm:mb-0">
+      <%= prev_page_tag unless current_page.first? %>
+      <% each_page do |page| -%>
+        <% if page.display_tag? -%>
+          <%= page_tag page %>
+        <% elsif !page.was_truncated? -%>
+          <%= gap_tag %>
+        <% end -%>
+      <% end -%>
+      <% unless current_page.out_of_range? %>
+        <%= next_page_tag unless current_page.last? %>
+      <% end %>
+    </ul>
+  </nav>
+<% end -%>

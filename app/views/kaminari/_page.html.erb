@@ -1,0 +1,15 @@
+<% if page.current? %>
+  <li>
+    <a href="<%= url %>" rel="<%= page.rel %>" aria-current="page" class="<%= "rounded-s-lg" if current_page.first? %> <%= "rounded-e-lg" if current_page.last? %> flex items-center justify-center h-10 px-4 text-indigo-600 border border-gray-300 bg-indigo-100 hover:bg-indigo-200 hover:text-indigo-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+      data-turbo-action="advance">
+      <%= page %>
+    </a>
+  </li>
+<% else %>
+  <li>
+    <a href="<%= url %>" rel="<%= page.rel %>" class="flex items-center justify-center h-10 px-4 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+      data-turbo-action="advance">
+      <%= page %>
+    </a>
+  </li>
+<% end %>
