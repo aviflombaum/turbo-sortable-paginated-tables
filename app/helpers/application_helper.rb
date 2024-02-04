@@ -1,6 +1,6 @@
 module ApplicationHelper
   def sortable_table_header(title, column, path_method, **)
-    content_tag(:th, class: "px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider") do
+    content_tag(:th, class: "invoices__th") do
       sortable_column(title, column, path_method)
     end
   end
