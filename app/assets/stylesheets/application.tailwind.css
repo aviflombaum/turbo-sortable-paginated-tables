@@ -94,18 +94,11 @@
 }
 
 .invoices__row {
-  @apply py-4 text-sm text-gray-500 whitespace-nowrap;
+  @apply py-4 pl-4 pr-3 text-sm text-gray-500 sm:pl-6 whitespace-nowrap;
 }
 
 .invoices__row--header {
   @apply px-3;
-}
-
-.invoices__row--id,
-.invoices__row--amount,
-.invoices__row--status,
-.invoices__row--created-at {
-  @apply pl-4 pr-3 sm:pl-6;
 }
 
 .invoices__row--id {
