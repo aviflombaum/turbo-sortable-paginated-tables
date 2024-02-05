@@ -1,5 +1,7 @@
 # Turbo Sortable Paginated Table
 
+[Read the Full Article](https://code.avi.nyc/turbo-sortable-paginated-tables)
+
 We're going to build a common UI pattern: a sortable, paginated table using the power of Ruby on Rails and Turbo Frames.
 
 ## Sortable Table Headers
