@@ -12,7 +12,7 @@ The first step is to create the sortable table headers as simple links. I wrote 
 module ApplicationHelper
   def sortable_table_header(title, column, path_method, **)
     content_tag(:th, class: "invoices__th") do
-      self.sortable_column(title, column, path_method)
+      sortable_column(title, column, path_method)
     end
   end
 
