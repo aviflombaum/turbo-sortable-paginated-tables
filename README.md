@@ -162,4 +162,14 @@ Now you can share the state of the sort with people.
 
 I wish there was more to say about implementing this feature, it's just so simple and easy to do with Turbo and Rails. I also updated the pagination links to use the `data-turbo-action="advance"` attribute so that the URL changes when you click on a page number, but only the table is redrawn.
 
-The rest of the code in the application is worth exploring for some nice `BEM` and `Tailwind` patterns, but the main feature is the sortable, paginated table.
+The rest of the code in the application is worth exploring for some nice `BEM` and `Tailwind` patterns, but the main feature is the sortable, paginated table. Checkout the final source:
+
+- [Sortable Table Helper](https://github.com/aviflombaum/turbo-sortable-paginated-tables/blob/main/app/helpers/application_helper.rb)
+- [Sortable Table View](https://github.com/aviflombaum/turbo-sortable-paginated-tables/blob/main/app/views/invoices/index.html.erb)
+- [Sortable Table Controller](https://github.com/aviflombaum/turbo-sortable-paginated-tables/blob/main/app/controllers/invoices_controller.rb)
+- [Kaminari Pagination for Tailwind](https://github.com/aviflombaum/turbo-sortable-paginated-tables/tree/main/app/views/kaminari)
+- [BEM Style Tailwind CSS Tables](https://github.com/aviflombaum/turbo-sortable-paginated-tables/blob/main/app/assets/stylesheets/application.tailwind.css#L79-L116)
+
+You can checkout the full source code [Github](https://github.com/aviflombaum/turbo-sortable-paginated-tables) and play with it at [Turbo Sortable Paginated Tables](https://avi.nyc/turbo-sortable-paginated-tables).
+
+If you have any questions or comments or just liked the demo, feel free to reach out to me on [X](https://twitter.com/aviflombaum).
