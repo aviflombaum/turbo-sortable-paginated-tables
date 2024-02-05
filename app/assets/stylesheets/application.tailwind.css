@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes beat {
-  to {
-    transform: scale(1.3);
-  }
-}
-
 @layer components {
   main {
     @apply w-full max-w-2xl mx-auto mt-12 md:w-2/3;
@@ -46,21 +40,21 @@
   }
 
   .paginator {
-    @apply items-center w-full py-4 bg-white sm:flex sm:justify-between;
+    @apply items-center w-full py-4 text-sm bg-white sm:flex sm:justify-between;
 
     .paginator__next {
-      @apply flex items-center justify-center h-10 px-4 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700;
+      @apply flex items-center justify-center h-8 px-3 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700;
     }
 
     .paginator__prev {
-      @apply flex items-center justify-center h-10 px-4 leading-tight text-gray-500 bg-white border border-gray-300 ms-0 border-e-0 rounded-s-lg hover:bg-gray-100 hover:text-gray-700;
+      @apply flex items-center justify-center h-8 px-3 leading-tight text-gray-500 bg-white border border-gray-300 ms-0 border-e-0 rounded-s-lg hover:bg-gray-100 hover:text-gray-700;
     }
     .paginator__gap {
-      @apply flex items-center justify-center h-10 px-4 leading-tight text-gray-500 bg-white border border-gray-300;
+      @apply flex items-center justify-center h-8 px-3 leading-tight text-gray-500 bg-white border border-gray-300;
     }
 
     .paginator__page {
-      @apply flex items-center justify-center h-10 px-4 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700;
+      @apply flex items-center justify-center h-8 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700;
     }
     .paginator__page-current {
       @apply text-indigo-600 bg-indigo-100 hover:bg-indigo-200 hover:text-indigo-700;
@@ -78,39 +72,39 @@
 
 .invoices {
   @apply px-4 sm:px-6 lg:px-8;
-}
 
-.invoices__header {
-  @apply text-base font-semibold leading-6 text-gray-900;
-}
+  .invoices__header {
+    @apply text-base font-semibold leading-6 text-gray-900;
+  }
 
-.invoices__table {
-  @apply min-w-full divide-y divide-gray-300;
-}
+  .invoices__table {
+    @apply min-w-full divide-y divide-gray-300;
+  }
 
-.invoices__thead {
-  @apply bg-gray-50;
-}
+  .invoices__thead {
+    @apply bg-gray-50;
+  }
 
-.invoices__th {
-  @apply px-4 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase;
-}
-.invoices__tbody {
-  @apply bg-white divide-y divide-gray-200;
-}
+  .invoices__th {
+    @apply px-4 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase;
+  }
+  .invoices__tbody {
+    @apply bg-white divide-y divide-gray-200;
+  }
 
-.invoices__row {
-  @apply py-4 pl-4 pr-3 text-sm text-gray-500 sm:pl-6 whitespace-nowrap;
-}
+  .invoices__row {
+    @apply py-4 pl-4 pr-3 text-sm text-gray-500 sm:pl-6 whitespace-nowrap;
+  }
 
-.invoices__row--header {
-  @apply px-3;
-}
+  .invoices__row--header {
+    @apply px-3;
+  }
 
-.invoices__row--id {
-  @apply font-medium text-gray-900;
-}
+  .invoices__row--id {
+    @apply font-medium text-gray-900;
+  }
 
-.invoices__table--shadow {
-  @apply overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg;
+  .invoices__table--shadow {
+    @apply overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg;
+  }
 }
