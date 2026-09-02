@@ -45,6 +45,11 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
 
+  # Exempt the health check from the SSL redirect. Coolify probes http://localhost:3000/up,
+  # which force_ssl answers with a 301, so the container never becomes healthy without this.
+  # Rails 8 generates this exclusion; this app predates it.
+  config.ssl_options = { redirect: { exclude: ->(request) { request.path == "/up" } } }
+
   # Log to STDOUT by default
   config.logger = ActiveSupport::Logger.new(STDOUT)
     .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
